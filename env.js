@@ -1,5 +1,5 @@
 var AppConfig = {
-	"emailUser" : 'user_BOTiDD1awij5E4JXkaY8K',
-	"emailTemplate" : 'template_csid40m',
+	"emailUser" : 'use your own user id on EmailJS',
+	"emailTemplate" : 'use your own template on EmailJS',
 	"emailService" : 'default_service'
 }
