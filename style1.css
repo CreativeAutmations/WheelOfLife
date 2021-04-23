@@ -26,9 +26,14 @@
 }
 
 .row{
-    margin: 0%;
+    margin: 2%;
 
 
+}
+
+.col{
+    font-size: larger;
+    font-weight: 400;
 }
 
 .label{
