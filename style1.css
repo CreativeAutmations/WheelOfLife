@@ -22,11 +22,24 @@
 
 #dataentrypane {
     margin-top: 20px;
+    padding: 0% 10% 0% 10%;
+}
+
+.row{
+    margin: 2%;
+
+
+}
+
+.col{
+    font-size: larger;
+    font-weight: 400;
 }
 
 .label{
     font-size: x-large;
     font-weight: 500;
+    margin: 0%;
 }
 
 /* ------------------------------------------------------------------------------------ */
