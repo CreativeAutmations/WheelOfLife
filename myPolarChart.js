@@ -143,3 +143,17 @@ $("#renderBtn").click(
 		renderChart(data, App.labels);
     }
 );
+
+$("#customRange1").oninput(
+	function() {
+		var a = $('#customRange1').slider("option", "value");
+		alert(a);
+		$("#r1").val(a);	
+	}
+)
+// var val = $('#slider').slider("option", "value");
+// $('textarea').on('input', function() {
+// 	text = $('textarea').val();
+// 	$('div').html(text);
+// });
+  

@@ -186,7 +186,7 @@ var DataEntryPane = {
       MainButtons.showDataEntryPane(++App.State.CurrentStage);
       App.Progress();
       $("#b" + (App.State.CurrentStage)).addClass("completed");
-      $("#b" + (App.State.CurrentStage+1)).addClass("inProgress");
+      $("#b" + (App.State.CurrentStage + 1)).addClass("inProgress");
     }
     $("#choiceLists .main-block").removeClass("selected");
     $("#choiceList" + choice).addClass("selected");
@@ -205,7 +205,7 @@ var DataEntryPane = {
       App.State.CurrentStage++;
       App.Progress();
       $("#b" + (App.State.CurrentStage)).addClass("completed");
-      $("#b" + (App.State.CurrentStage+1)).addClass("inProgress");
+      $("#b" + (App.State.CurrentStage + 1)).addClass("inProgress");
       return;
     }
     var response = this.getResponse();
@@ -230,12 +230,12 @@ var DataEntryPane = {
       PreviewPane.refresh();
       App.State.CurrentStage++;
       $("#b" + (App.State.CurrentStage)).addClass("completed");
-      $("#b" + (App.State.CurrentStage+1)).addClass("inProgress");
+      $("#b" + (App.State.CurrentStage + 1)).addClass("inProgress");
       App.Progress();
     }
   },
   checkStageAndSetView(response) {
-    
+
     if (this.IsList[App.State.CurrentStage]) {//Choices Condition
       this.addChoices();
       $("#AddMore").hide();
@@ -244,7 +244,7 @@ var DataEntryPane = {
     }
     else if (this.DependentList[App.State.CurrentStage]) {
       this.nextChoice();
-      $("#iChoices").hide();      
+      $("#iChoices").hide();
       this.incr = 0;
       if (App.State.CurrentStage == 4)
         MainButtons.showDataEntryPane(App.State.CurrentStage + 1);
@@ -266,7 +266,7 @@ var DataEntryPane = {
       MainButtons.enableNextButton();
       App.showView("preview");
       $("#mobileStart").text("Submit");
-      $("#iChoices").hide();    
+      $("#iChoices").hide();
     }
   },
 
@@ -304,7 +304,7 @@ var DataEntryPane = {
   },
   setView(btnIndex) {
     $("#iQuestion").text(this.Questions[btnIndex]);
-    if (btnIndex == 8){
+    if (btnIndex == 8) {
       $("#iChoices").text(App.UserData[7]);
       $("#iChoices").show();
     }
@@ -339,11 +339,11 @@ var DataEntryPane = {
     }
     var addInfo = App.UserData[5].split("\n");
     for (var i = 0; i < addInfo.length; i++) {
-      $("#MoreInfo").append('<li>'+addInfo[i] + '</li>');
+      $("#MoreInfo").append('<li>' + addInfo[i] + '</li>');
     }
     var Help = App.UserData[6].split("\n");
     for (var i = 0; i < Help.length; i++) {
-      $("#Help").append('<li>'+Help[i] + '</li>');
+      $("#Help").append('<li>' + Help[i] + '</li>');
     }
   },
   prepareForEdit() {
@@ -504,70 +504,70 @@ var MainButtons = {
   showDataEntryMobile() {
     if (App.State.CurrentStage == 0) {
       this.showDataEntryPane(0);
-      $("#b" + (App.State.CurrentStage+1)).addClass("inProgress");
+      $("#b" + (App.State.CurrentStage + 1)).addClass("inProgress");
       $("#mobileStart").text("Continue");
     }
     else if (App.State.CurrentStage < 9) {
-      PreviewPane.hidePreview();    
+      PreviewPane.hidePreview();
     }
     else {
       this.showReport();
 
     }
   },
-  sendEmail(){
-    var emailGt =$.trim($("#sendReportInt").val());
-    if (emailGt== "") {
+  sendEmail() {
+    var emailGt = $.trim($("#sendReportInt").val());
+    if (emailGt == "") {
       alert("Please enter the Email");
       return;
     }
-    var width=75/App.UserData[1].length;
-    var Choices='',cons='',val='',feel='',help='';
-    for(var c=0;c<App.UserData[1].length;c++){
-      Choices+='<td style="border: 1px solid black; width:'+width+'%;">'+App.UserData[1][c]+'</td>';
+    var width = 75 / App.UserData[1].length;
+    var Choices = '', cons = '', val = '', feel = '', help = '';
+    for (var c = 0; c < App.UserData[1].length; c++) {
+      Choices += '<td style="border: 1px solid black; width:' + width + '%;">' + App.UserData[1][c] + '</td>';
     }
-    for(var c=0;c<App.UserData[1].length;c++){
-      cons+='<td style="border: 1px solid black; width:'+width+'%;"><ul>';
+    for (var c = 0; c < App.UserData[1].length; c++) {
+      cons += '<td style="border: 1px solid black; width:' + width + '%;"><ul>';
       var tempcons = App.UserData[2][c].split("\n");
       for (var i = 0; i < tempcons.length; i++) {
-        cons+='<li>'+tempcons[i]+'</li>';
+        cons += '<li>' + tempcons[i] + '</li>';
       }
-      cons+='</ul></td>';
+      cons += '</ul></td>';
     }
-    for(var c=0;c<App.UserData[1].length;c++){
-      val+='<td style="border: 1px solid black; width:'+width+'%;"><ul>';
+    for (var c = 0; c < App.UserData[1].length; c++) {
+      val += '<td style="border: 1px solid black; width:' + width + '%;"><ul>';
       var tempvals = App.UserData[3][c].split("\n");
       for (var i = 0; i < tempvals.length; i++) {
-        val+='<li>'+tempvals[i]+'</li>';
+        val += '<li>' + tempvals[i] + '</li>';
       }
-      val+='</ul></td>';
+      val += '</ul></td>';
     }
-    for(var c=0;c<App.UserData[1].length;c++){
-      feel+='<td style="border: 1px solid black; width:'+width+'%;"><ul>';
+    for (var c = 0; c < App.UserData[1].length; c++) {
+      feel += '<td style="border: 1px solid black; width:' + width + '%;"><ul>';
       var tempcons = App.UserData[4][c].split("\n");
       for (var i = 0; i < tempcons.length; i++) {
-        feel+='<li>'+tempcons[i]+'</li>';
+        feel += '<li>' + tempcons[i] + '</li>';
       }
-      feel+='</ul></td>';
+      feel += '</ul></td>';
     }
     var wcHelp = App.UserData[6].split("\n");
     for (var i = 0; i < wcHelp.length; i++) {
-      help+='<li>'+wcHelp[i]+'</li>';
+      help += '<li>' + wcHelp[i] + '</li>';
     }
     var templateParams = {
       Problem: App.UserData[0],
       reply_to: emailGt,
-      reportData:'<!DOCTYPE html><html><body><table style="width:100%; border: 1px solid black;"><tr><th style="border: 1px solid black; width: 25%;">Problem</th><th style="border: 1px solid black; width: 75%;" colspan="'+App.UserData[1].length+'">'+App.UserData[0]+'</th></tr><tr><td style="border: 1px solid black; width: 25%;">Choices</td>'+Choices+'</tr><tr><td style="border: 1px solid black; width: 25%;">Consequences</td>'+cons+'</tr><tr><td style="border: 1px solid black; width: 25%;">Values</td>'+val+'</tr><tr><td style="border: 1px solid black; width: 25%;">Feelings</td>'+feel+'</tr><tr><td style="border: 1px solid black; width: 25%;">Additional Info</td><td style="border: 1px solid black; width: 75%;" colspan="'+App.UserData[1].length+'">'+App.UserData[5]+'</td></tr><tr><td style="border: 1px solid black; width: 25%;">Who Can Help</td><td style="border: 1px solid black; width: 75%;" colspan="'+App.UserData[1].length+'"><ul>'+help+'</ul></td></tr><tr><td style="border: 1px solid black; width: 25%;">Decision</td><td style="border: 1px solid black; width: 75%;" colspan="'+App.UserData[1].length+'">'+App.UserData[7]+'</td></tr><tr><td style="border: 1px solid black; width: 25%;">Assessment</td><td style="border: 1px solid black; width: 75%;" colspan="'+App.UserData[1].length+'">'+App.UserData[8]+'</td></tr></table></body></html>'
-  }; 
+      reportData: '<!DOCTYPE html><html><body><table style="width:100%; border: 1px solid black;"><tr><th style="border: 1px solid black; width: 25%;">Problem</th><th style="border: 1px solid black; width: 75%;" colspan="' + App.UserData[1].length + '">' + App.UserData[0] + '</th></tr><tr><td style="border: 1px solid black; width: 25%;">Choices</td>' + Choices + '</tr><tr><td style="border: 1px solid black; width: 25%;">Consequences</td>' + cons + '</tr><tr><td style="border: 1px solid black; width: 25%;">Values</td>' + val + '</tr><tr><td style="border: 1px solid black; width: 25%;">Feelings</td>' + feel + '</tr><tr><td style="border: 1px solid black; width: 25%;">Additional Info</td><td style="border: 1px solid black; width: 75%;" colspan="' + App.UserData[1].length + '">' + App.UserData[5] + '</td></tr><tr><td style="border: 1px solid black; width: 25%;">Who Can Help</td><td style="border: 1px solid black; width: 75%;" colspan="' + App.UserData[1].length + '"><ul>' + help + '</ul></td></tr><tr><td style="border: 1px solid black; width: 25%;">Decision</td><td style="border: 1px solid black; width: 75%;" colspan="' + App.UserData[1].length + '">' + App.UserData[7] + '</td></tr><tr><td style="border: 1px solid black; width: 25%;">Assessment</td><td style="border: 1px solid black; width: 75%;" colspan="' + App.UserData[1].length + '">' + App.UserData[8] + '</td></tr></table></body></html>'
+    };
     emailjs.send("default_service", "template_2rkf4re", templateParams)
-    .then(function() {
-      $("#finalReport").hide();
-      $("#thankYou").show();
-    }, function(error) {
+      .then(function () {
+        $("#finalReport").hide();
+        $("#thankYou").show();
+      }, function (error) {
         alert("Sorry,We can't send your email currently, you can save report by downloading the webpage");
-    });
+      });
   },
-  reloadPage(){
+  reloadPage() {
     location.reload();
   }
 }
