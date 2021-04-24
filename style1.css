@@ -9,7 +9,7 @@ body {
     color: aliceblue;
     text-align: center;
     font-size: xx-large;
-    height: 13%;
+    height: 10%;
 }
 
 #head {
@@ -27,17 +27,18 @@ body {
 }
 
 #dataentrypane {
-    margin-top: 20px;
     padding: 0% 10% 0% 10%;
-    height: 77%;
+    height: 84%;
 }
-
+/* #footer_area{
+    padding: 0% 10% 0% 10%;
+} */
 .row{
-    margin: 2%;
-
-
+    padding-top: 3%;
 }
-
+.form-range{
+    width: 100%;
+}
 .col{
     font-size: larger;
     font-weight: 400;
@@ -47,6 +48,15 @@ body {
     font-size: x-large;
     font-weight: 500;
     margin: 0%;
+}
+#footer_area{
+    height: 6%;
+}
+
+.footer_buttons{
+    height: 100%;
+    margin: 0;
+    padding: 0%;
 }
 
 /* ------------------------------------------------------------------------------------ */
