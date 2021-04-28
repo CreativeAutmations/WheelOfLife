@@ -142,8 +142,24 @@ $("#renderBtn").click(
 		renderChart(data, App.labels);
 	}
 );
+var storageUnit = {
+	currentStage: 0,
+	userData: [
+		"",
+		"",
+		"",
+		"",
+		"",
+		"",
+		"",
+		""
+	],
+}
+
 $(function () {
-	var ids = ["#span1","#span2","#span3","#span4","#span5","#span6","#span7","#span8"];
+	// 	var ids1 = ["#span1", "#span2", "#span3", "#span4", "#span5", "#span6", "#span7", "#span8"];
+	// 	var ids2 = ["#input1", "#input2", "#input3", "#input4", "#input5", "#input6", "#input7", "#input8"];
+	// 	for (var i = 0; i < ids2.length; i++)
 	$('#input1').on('input', function () {
 		var val = $(this).val();
 		var min = $(this).attr('min');
@@ -153,7 +169,44 @@ $(function () {
 		$('#span1').css('left', portion * $('.h-rs-line').width());
 	});
 });
+$(function () {
+	$('#input2').on('input', function () {
+		var val = $(this).val();
+		var min = $(this).attr('min');
+		var max = $(this).attr('max');
+		var portion = (val - min) / (max - min);
+		$('#span2').text(val);
+		$('#span2').css('left', portion * $('.h-rs-line').width());
+	});
+});
+$(function () {
+	for (var i = 0; i < storageUnit.currentStage; i++) {
+		$("#input" + (i + 1)).on('input', function () {
+			var val = $(this).val();
+			var min = $(this).attr('min');
+			var max = $(this).attr('max');
+			var portion = (val - min) / (max - min);
+			$("#span" + (i + 1)).text(val);
+			$("#span").css('left', portion * $('.h-rs-line').width());
+		});
+	}
+
+});
+
+var action = {
+	showDataEntry() {
+		$("#dataentrypane").hide();
+		$("#ReportPane").show();
+		$("#show_data_entry").hide();
+	}
+}
+
+var ReportPane = {
+	DoAgain() {
+		$("#dataentrypane").show();
+		$("#show_data_entry").show();
+		$("#ReportPane").hide();
 
 
-
-
+	}
+}
