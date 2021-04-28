@@ -179,20 +179,69 @@ $(function () {
 		$('#span2').css('left', portion * $('.h-rs-line').width());
 	});
 });
-$(function () {
-	for (var i = 0; i < storageUnit.currentStage; i++) {
-		$("#input" + (i + 1)).on('input', function () {
-			var val = $(this).val();
-			var min = $(this).attr('min');
-			var max = $(this).attr('max');
-			var portion = (val - min) / (max - min);
-			$("#span" + (i + 1)).text(val);
-			$("#span").css('left', portion * $('.h-rs-line').width());
-		});
-	}
 
+$(function () {
+	$('#input3').on('input', function () {
+		var val = $(this).val();
+		var min = $(this).attr('min');
+		var max = $(this).attr('max');
+		var portion = (val - min) / (max - min);
+		$('#span3').text(val);
+		$('#span3').css('left', portion * $('.h-rs-line').width());
+	});
 });
 
+$(function () {
+	$('#input4').on('input', function () {
+		var val = $(this).val();
+		var min = $(this).attr('min');
+		var max = $(this).attr('max');
+		var portion = (val - min) / (max - min);
+		$('#span4').text(val);
+		$('#span4').css('left', portion * $('.h-rs-line').width());
+	});
+});
+
+$(function () {
+	$('#input5').on('input', function () {
+		var val = $(this).val();
+		var min = $(this).attr('min');
+		var max = $(this).attr('max');
+		var portion = (val - min) / (max - min);
+		$('#span5').text(val);
+		$('#span5').css('left', portion * $('.h-rs-line').width());
+	});
+});
+$(function () {
+	$('#input6').on('input', function () {
+		var val = $(this).val();
+		var min = $(this).attr('min');
+		var max = $(this).attr('max');
+		var portion = (val - min) / (max - min);
+		$('#span6').text(val);
+		$('#span6').css('left', portion * $('.h-rs-line').width());
+	});
+});
+$(function () {
+	$('#input7').on('input', function () {
+		var val = $(this).val();
+		var min = $(this).attr('min');
+		var max = $(this).attr('max');
+		var portion = (val - min) / (max - min);
+		$('#span7').text(val);
+		$('#span7').css('left', portion * $('.h-rs-line').width());
+	});
+});
+$(function () {
+	$('#input8').on('input', function () {
+		var val = $(this).val();
+		var min = $(this).attr('min');
+		var max = $(this).attr('max');
+		var portion = (val - min) / (max - min);
+		$('#span8').text(val);
+		$('#span8').css('left', portion * $('.h-rs-line').width());
+	});
+});
 var action = {
 	showDataEntry() {
 		$("#dataentrypane").hide();
