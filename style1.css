@@ -27,12 +27,17 @@ body {
 }
 
 #dataentrypane {
-    padding: 0% 10% 0% 10%;
+    padding: 2% 10% 0% 10%;
     height: 84%;
 }
 /* #footer_area{
     padding: 0% 10% 0% 10%;
 } */
+
+#footer_area {
+    height: 6%;
+}
+
 .row{
     padding-top: 3%;
 }
@@ -60,7 +65,6 @@ body {
 }
 
 .parent{
-    margin: 2%;
     display: flex;
   }
     .h-rs {
