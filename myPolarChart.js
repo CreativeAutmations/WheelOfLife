@@ -142,106 +142,21 @@ $("#renderBtn").click(
 		renderChart(data, App.labels);
 	}
 );
-var storageUnit = {
-	currentStage: 0,
-	userData: [
-		"",
-		"",
-		"",
-		"",
-		"",
-		"",
-		"",
-		""
-	],
+var portion;
+var input = {
+	myFunction(i) {
+		var ids1 = ["#span1", "#span2", "#span3", "#span4", "#span5", "#span6", "#span7", "#span8"];
+		var ids2 = ["#input1", "#input2", "#input3", "#input4", "#input5", "#input6", "#input7", "#input8"];
+		$(ids2[i]).on('input', function () {
+			var val = $(this).val();
+			var min = $(this).attr('min');
+			var max = $(this).attr('max');
+			 portion = (val - min) / (max - min);
+			$(ids1[i]).text(val);
+			$(ids1[i]).css('left', portion * $('.h-rs-line').width());
+		});
+	}
 }
-
-$(function () {
-	// 	var ids1 = ["#span1", "#span2", "#span3", "#span4", "#span5", "#span6", "#span7", "#span8"];
-	// 	var ids2 = ["#input1", "#input2", "#input3", "#input4", "#input5", "#input6", "#input7", "#input8"];
-	// 	for (var i = 0; i < ids2.length; i++)
-	$('#input1').on('input', function () {
-		var val = $(this).val();
-		var min = $(this).attr('min');
-		var max = $(this).attr('max');
-		var portion = (val - min) / (max - min);
-		$('#span1').text(val);
-		$('#span1').css('left', portion * $('.h-rs-line').width());
-	});
-});
-$(function () {
-	$('#input2').on('input', function () {
-		var val = $(this).val();
-		var min = $(this).attr('min');
-		var max = $(this).attr('max');
-		var portion = (val - min) / (max - min);
-		$('#span2').text(val);
-		$('#span2').css('left', portion * $('.h-rs-line').width());
-	});
-});
-
-$(function () {
-	$('#input3').on('input', function () {
-		var val = $(this).val();
-		var min = $(this).attr('min');
-		var max = $(this).attr('max');
-		var portion = (val - min) / (max - min);
-		$('#span3').text(val);
-		$('#span3').css('left', portion * $('.h-rs-line').width());
-	});
-});
-
-$(function () {
-	$('#input4').on('input', function () {
-		var val = $(this).val();
-		var min = $(this).attr('min');
-		var max = $(this).attr('max');
-		var portion = (val - min) / (max - min);
-		$('#span4').text(val);
-		$('#span4').css('left', portion * $('.h-rs-line').width());
-	});
-});
-
-$(function () {
-	$('#input5').on('input', function () {
-		var val = $(this).val();
-		var min = $(this).attr('min');
-		var max = $(this).attr('max');
-		var portion = (val - min) / (max - min);
-		$('#span5').text(val);
-		$('#span5').css('left', portion * $('.h-rs-line').width());
-	});
-});
-$(function () {
-	$('#input6').on('input', function () {
-		var val = $(this).val();
-		var min = $(this).attr('min');
-		var max = $(this).attr('max');
-		var portion = (val - min) / (max - min);
-		$('#span6').text(val);
-		$('#span6').css('left', portion * $('.h-rs-line').width());
-	});
-});
-$(function () {
-	$('#input7').on('input', function () {
-		var val = $(this).val();
-		var min = $(this).attr('min');
-		var max = $(this).attr('max');
-		var portion = (val - min) / (max - min);
-		$('#span7').text(val);
-		$('#span7').css('left', portion * $('.h-rs-line').width());
-	});
-});
-$(function () {
-	$('#input8').on('input', function () {
-		var val = $(this).val();
-		var min = $(this).attr('min');
-		var max = $(this).attr('max');
-		var portion = (val - min) / (max - min);
-		$('#span8').text(val);
-		$('#span8').css('left', portion * $('.h-rs-line').width());
-	});
-});
 var action = {
 	showDataEntry() {
 		$("#dataentrypane").hide();
@@ -249,7 +164,6 @@ var action = {
 		$("#show_data_entry").hide();
 	}
 }
-
 var ReportPane = {
 	DoAgain() {
 		$("#dataentrypane").show();
