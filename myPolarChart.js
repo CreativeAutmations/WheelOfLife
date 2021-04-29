@@ -142,16 +142,18 @@ $("#renderBtn").click(
 		renderChart(data, App.labels);
 	}
 );
-var portion;
+var labels = ["Friends & Family", "Relationships", "Wealth", "Personal Growth", "Health", "Fun & Recreation", "Possesion","career"];
+var values = ["", "","","","","","",""];
 var input = {
 	myFunction(i) {
 		var ids1 = ["#span1", "#span2", "#span3", "#span4", "#span5", "#span6", "#span7", "#span8"];
 		var ids2 = ["#input1", "#input2", "#input3", "#input4", "#input5", "#input6", "#input7", "#input8"];
 		$(ids2[i]).on('input', function () {
 			var val = $(this).val();
+			values[i] = val;
 			var min = $(this).attr('min');
 			var max = $(this).attr('max');
-			 portion = (val - min) / (max - min);
+			var portion = (val - min) / (max - min);
 			$(ids1[i]).text(val);
 			$(ids1[i]).css('left', portion * $('.h-rs-line').width());
 		});
