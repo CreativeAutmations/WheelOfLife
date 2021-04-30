@@ -142,18 +142,36 @@ $("#renderBtn").click(
 		renderChart(data, App.labels);
 	}
 );
-$(function () {
-	var ids = ["#span1","#span2","#span3","#span4","#span5","#span6","#span7","#span8"];
-	$('#input1').on('input', function () {
-		var val = $(this).val();
-		var min = $(this).attr('min');
-		var max = $(this).attr('max');
-		var portion = (val - min) / (max - min);
-		$('#span1').text(val);
-		$('#span1').css('left', portion * $('.h-rs-line').width());
-	});
-});
+var labels = ["Friends & Family", "Relationships", "Wealth", "Personal Growth", "Health", "Fun & Recreation", "Possesion","career"];
+var values = ["", "","","","","","",""];
+var input = {
+	myFunction(i) {
+		var ids1 = ["#span1", "#span2", "#span3", "#span4", "#span5", "#span6", "#span7", "#span8"];
+		var ids2 = ["#input1", "#input2", "#input3", "#input4", "#input5", "#input6", "#input7", "#input8"];
+		$(ids2[i]).on('input', function () {
+			var val = $(this).val();
+			values[i] = val;
+			var min = $(this).attr('min');
+			var max = $(this).attr('max');
+			var portion = (val - min) / (max - min);
+			$(ids1[i]).text(val);
+			$(ids1[i]).css('left', portion * $('.h-rs-line').width());
+		});
+	}
+}
+var action = {
+	showDataEntry() {
+		$("#dataentrypane").hide();
+		$("#ReportPane").show();
+		$("#show_data_entry").hide();
+	}
+}
+var ReportPane = {
+	DoAgain() {
+		$("#dataentrypane").show();
+		$("#show_data_entry").show();
+		$("#ReportPane").hide();
 
 
-
-
+	}
+}
