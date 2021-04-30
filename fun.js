@@ -35,13 +35,13 @@ $("#show_data_entry").click(
         data = [];
         showDataEntry();
         for (var i = 0; i < App.labels.length; i++) {
-            data.push(data[App.labels[i]]);
+            data.push(App.data[App.labels[i]]);
         }
         renderChart(data, App.labels);
 
     }
 )
-/*-------------------------------------------------------------------------------------------------------------------*/
+
 function renderChart(data, labels) {
     var ctx = document.getElementById("myChart").getContext('2d');
     var myChart = new Chart(ctx, {
@@ -123,8 +123,8 @@ function renderChart(data, labels) {
 
 function showDataEntry() {
         $('#dataentrypane').hide();
-        $('#ReportPane').show();
-        $('#sendRefport').show();
+        $('#ReportPane').css({display :'block'});
+        $('#sendReportBtn').show();
         $("#show_data_entry").hide();
 
         var labelToIdMap = {
