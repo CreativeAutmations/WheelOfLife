@@ -37,7 +37,7 @@ $("#show_data_entry").click(
         for (var i = 0; i < App.labels.length; i++) {
             data.push(App.data[App.labels[i]]);
         }
-        renderChart(data, App.labels);
+        renderChart(App.data, App.labels);
 
     }
 )
@@ -142,7 +142,7 @@ function showDataEntry() {
             var ctrl = "#" + labelToIdMap[App.labels[i]];
             var userdata = $(ctrl).val();
             App.data[App.labels[i]] = userdata;
-            // App.State.CurrentStage++ ;
+            //  App.State.CurrentStage++ ;
         }
 
     }
