@@ -14,8 +14,9 @@ var Application = {
     },
     "labels": ["Friends & Family", "Relationships", "Wealth", "Personal Growth", "Health", "Fun & Recreation", "Possesion", "Career"]
 }
-var input = {
-    myFunction(i) {
+
+var action = {
+    showIncrement(i) {
         var ids1 = ["#span1", "#span2", "#span3", "#span4", "#span5", "#span6", "#span7", "#span8"];
         var ids2 = ["#input1", "#input2", "#input3", "#input4", "#input5", "#input6", "#input7", "#input8"];
         $(ids2[i]).on('input', function () {
@@ -27,20 +28,34 @@ var input = {
             $(ids1[i]).text(val);
             $(ids1[i]).css('left', portion * $('.h-rs-line').width());
         });
-    }
-}
-
-$("#show_data_entry").click(
-    function () {
+    },
+    showPieChart() {
         data = [];
         showDataEntry();
         for (var i = 0; i < Application.labels.length; i++) {
             data.push(Application.data[Application.labels[i]]);
         }
         renderChart(data, Application.labels);
-
+    },
+    sendEmail(){
+        var result = Application.data;
+        if (email != false) {
+            emailjs.init(siteConfiguration.email.userId);
+            var templateParams = {
+                reply_to: email,
+                reportData: result
+            };
+            emailjs.send(siteConfiguration.email.service, siteConfiguration.email.templateId, templateParams)
+                .then(
+                    ReportPane.showThankYouPage(),
+                    function (error) {
+                        alert("Sorry,We can't send your email currently, you can save report by downloading the webpage");
+                        console.log(error);
+                    }
+                );
+        }
     }
-)
+}
 
 function renderChart(data, labels) {
     var ctx = document.getElementById("myChart").getContext('2d');
@@ -122,35 +137,38 @@ function renderChart(data, labels) {
 }
 
 function showDataEntry() {
-        $('#dataentrypane').hide();
-        $('#ReportPane').css({display :'block'});
-        $('#sendReport').show();
-        $("#show_data_entry").hide();
+    $('#dataentrypane').hide();
+    $('#ReportPane').css({ display: 'block' });
+    $('#sendReport').show();
+    $("#submit_btn").hide();
 
-        var labelToIdMap = {
-            "Friends & Family": "input1",
-            "Relationships": "input2",
-            "Wealth": "input3",
-            "Personal Growth": "input4",
-            "Health": "input5",
-            "Fun & Recreation": "input6",
-            "Possesion": "input7",
-            "Career": "input8"
-        };
+    var labelToIdMap = {
+        "Friends & Family": "input1",
+        "Relationships": "input2",
+        "Wealth": "input3",
+        "Personal Growth": "input4",
+        "Health": "input5",
+        "Fun & Recreation": "input6",
+        "Possesion": "input7",
+        "Career": "input8"
+    };
 
-        for (var i = 0; i < Application.labels.length; i++) {
-            var ctrl = "#" + labelToIdMap[Application.labels[i]];
-            var userdata = $(ctrl).val();
-            Application.data[Application.labels[i]] = userdata;
-        }
-
+    for (var i = 0; i < Application.labels.length; i++) {
+        var ctrl = "#" + labelToIdMap[Application.labels[i]];
+        var userdata = $(ctrl).val();
+        Application.data[Application.labels[i]] = userdata;
     }
-var ReportPane = {
-	DoAgain() {
-		$("#dataentrypane").show();
-		$("#show_data_entry").show();
-		$("#ReportPane").hide();
-        $('#sendReport').hide();
 
-	}
+}
+var ReportPane = {
+    DoAgain() {
+        $("#dataentrypane").show();
+        $("#submit_btn").show();
+        $("#ReportPane").hide();
+        $('#sendReport').hide();
+        location.reload();
+    },
+    showThankYouPage() {
+        
+    }
 }
