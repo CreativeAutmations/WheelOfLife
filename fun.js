@@ -1,4 +1,4 @@
-var App = {
+var Application = {
     "State": {
         "CurrentStage": 0
     },
@@ -20,7 +20,7 @@ var input = {
         var ids2 = ["#input1", "#input2", "#input3", "#input4", "#input5", "#input6", "#input7", "#input8"];
         $(ids2[i]).on('input', function () {
             var val = $(this).val();
-            App.data[i] = val;
+            Application.data[i] = val;
             var min = $(this).attr('min');
             var max = $(this).attr('max');
             var portion = (val - min) / (max - min);
@@ -34,10 +34,10 @@ $("#show_data_entry").click(
     function () {
         data = [];
         showDataEntry();
-        for (var i = 0; i < App.labels.length; i++) {
-            data.push(App.data[App.labels[i]]);
+        for (var i = 0; i < Application.labels.length; i++) {
+            data.push(Application.data[Application.labels[i]]);
         }
-        renderChart(App.data, App.labels);
+        renderChart(data, Application.labels);
 
     }
 )
@@ -128,21 +128,21 @@ function showDataEntry() {
         $("#show_data_entry").hide();
 
         var labelToIdMap = {
-            "Friends & Family": "Friends-n-Family",
-            "Relationships": "Relationships",
-            "Wealth": "Wealth",
-            "Personal Growth": "Personal-Growth",
-            "Health": "Health",
-            "Fun & Recreation": "Fun-n-Recreation",
-            "Possesion": "Possesion",
-            "Career": "Career"
+            "Friends & Family": "input1",
+            "Relationships": "input2",
+            "Wealth": "input3",
+            "Personal Growth": "input4",
+            "Health": "input5",
+            "Fun & Recreation": "input6",
+            "Possesion": "input7",
+            "Career": "input8"
         };
 
-        for (var i = 0; i < App.labels.length; i++) {
-            var ctrl = "#" + labelToIdMap[App.labels[i]];
+        for (var i = 0; i < Application.labels.length; i++) {
+            var ctrl = "#" + labelToIdMap[Application.labels[i]];
             var userdata = $(ctrl).val();
-            App.data[App.labels[i]] = userdata;
-            //  App.State.CurrentStage++ ;
+            Application.data[Application.labels[i]] = userdata;
+            //  Application.State.CurrentStage++ ;
         }
 
     }

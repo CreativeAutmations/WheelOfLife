@@ -141,4 +141,4 @@ $("#renderBtn").click(
 
 		renderChart(data, App.labels);
 	}
- );
+);
