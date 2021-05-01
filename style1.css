@@ -136,6 +136,18 @@ body {
       margin-top: -5.5px;
     }
     
+    #sendReport {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        margin: 0px;
+    }
+       
+    #sendText {
+        display: inline;
+    }
+
 
 
 /* ------------------------------------------------------------------------------------ */

@@ -124,7 +124,7 @@ function renderChart(data, labels) {
 function showDataEntry() {
         $('#dataentrypane').hide();
         $('#ReportPane').css({display :'block'});
-        $('#sendReportBtn').show();
+        $('#sendReport').show();
         $("#show_data_entry").hide();
 
         var labelToIdMap = {
@@ -142,7 +142,6 @@ function showDataEntry() {
             var ctrl = "#" + labelToIdMap[Application.labels[i]];
             var userdata = $(ctrl).val();
             Application.data[Application.labels[i]] = userdata;
-            //  Application.State.CurrentStage++ ;
         }
 
     }
@@ -151,6 +150,7 @@ var ReportPane = {
 		$("#dataentrypane").show();
 		$("#show_data_entry").show();
 		$("#ReportPane").hide();
+        $('#sendReport').hide();
 
 	}
 }
