@@ -141,6 +141,7 @@ function showDataEntry() {
     $('#dataentrypane').hide();
     $('#ReportPane').css({ display: 'block' });
     $('#sendReport').show();
+    $("#do_again").show();
     $("#submit_btn").hide();
 
     var labelToIdMap = {
