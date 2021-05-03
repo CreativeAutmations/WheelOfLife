@@ -38,6 +38,7 @@ var action = {
         renderChart(data, Application.labels);
     },
     sendEmail(){
+        var email = ReportPane.getEmail();
         var result = Application.data;
         if (email != false) {
             emailjs.init(siteConfiguration.email.userId);
@@ -168,7 +169,19 @@ var ReportPane = {
         $('#sendReport').hide();
         location.reload();
     },
-    showThankYouPage() {
-        
-    }
+    showThankYouPage() {  
+    },
+    getEmail() {
+        var emailGt = $.trim($("#sendReportInt").val());
+        if (emailGt == "") {
+            alert("Please enter the Email");
+            return false;
+        }
+        var emailPattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        if (!emailPattern.test(emailGt)) {
+            alert("You have entered an invalid email address!");
+            return false;
+        }
+        return emailGt;
+    },
 }
