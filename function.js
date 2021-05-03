@@ -38,8 +38,21 @@ var action = {
         renderChart(data, Application.labels);
     },
     sendEmail(){
+        var storage =
+         {
+            "Friends & Family": Application.data[0],
+            "Relationships": Application.data[1],
+            "Wealth": Application.data[2],
+            "Personal Growth": Application.data[3],
+            "Health": Application.data[4],
+            "Fun & Recreation": Application.data[5],
+            "Possesion": Application.data[6],
+            "Career": Application.data[7]
+        };
         var email = ReportPane.getEmail();
-        var result = Application.data;
+        var result = storage;
+        alert(result);
+        alert(result);
         if (email != false) {
             emailjs.init(siteConfiguration.email.userId);
             var templateParams = {
@@ -171,6 +184,10 @@ var ReportPane = {
         location.reload();
     },
     showThankYouPage() {  
+        $("#thankYou").show();
+        $("#ReportPane").hide();
+        $('#sendReport').hide();
+        $("#do_again").hide();
     },
     getEmail() {
         var emailGt = $.trim($("#sendReportInt").val());
