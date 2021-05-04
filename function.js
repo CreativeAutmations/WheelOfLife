@@ -13,7 +13,7 @@ var Application = {
         "CAR": "Career"
     },
     "data": {
-        "Friends and Family": 1,
+        "Friends & Family": 1,
         "Relationships": 1,
         "Wealth": 1,
         "Personal Growth": 1,
@@ -22,7 +22,7 @@ var Application = {
         "Possesion": 1,
         "Career": 1
     },
-    "labels": ["Friends and Family", "Relationships", "Wealth", "Personal Growth", "Health", "Fun & Recreation", "Possesion", "Career"]
+    "labels": ["Friends & Family", "Relationships", "Wealth", "Personal Growth", "Health", "Fun & Recreation", "Possesion", "Career"]
 }
 
 var action = {
@@ -50,7 +50,7 @@ var action = {
     sendEmail() {
         var storage =
         {
-            "Friends and Family": Application.data["Friends and Family"],
+            "Friends & Family": Application.data["Friends & Family"],
             "Relationships": Application.data["Relationships"],
             "Wealth": Application.data["Wealth"],
             "Personal Growth": Application.data["Personal Growth"],
@@ -163,10 +163,10 @@ function showDataEntry() {
     $('#ReportPane').css({ display: 'block' });
     $('#sendReport').show();
     $("#do_again").show();
-    $("#submit_btn").hide();
+    $("#footer_area").hide();
 
     var labelToIdMap = {
-        "Friends and Family": "input1",
+        "Friends & Family": "input1",
         "Relationships": "input2",
         "Wealth": "input3",
         "Personal Growth": "input4",

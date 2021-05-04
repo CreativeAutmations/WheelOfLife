@@ -5,8 +5,8 @@ var template =
     <h1>Wheel Of Life</h1>
         <table style="width:20%; border: 1px solid black; text-align: center">
             <tr>
-                <td style="border: 1px solid black; width: 70%;">Friends and Family</td>
-                <td style="border: 1px solid black; width: 30%;">{{Friends and Family}}</td>
+                <td style="border: 1px solid black; width: 70%;">Friends & Family</td>
+                <td style="border: 1px solid black; width: 30%;">{{Friends & Family}}</td>
             </tr>
             <tr>
                 <td style="border: 1px solid black; width: 70%;">Relationships</td>
