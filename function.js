@@ -192,10 +192,10 @@ var ReportPane = {
         location.reload();
     },
     showThankYouPage() {
-        $("#thankYou").show();
+        $("#thankYou").css({ display: 'block' });
         $("#ReportPane").hide();
         $('#sendReport').hide();
-        $("#do_again").hide();
+        // $("#do_again").hide();
     },
     getEmail() {
         var emailGt = $.trim($("#sendReportInt").val());
