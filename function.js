@@ -2,15 +2,25 @@ var Application = {
     "State": {
         "CurrentStage": 0
     },
+    "constants":{
+        "FNF": "Friends & Family",
+        "REL": "Relationships",
+        "WEL": "Wealth",
+        "PER": "Personal Growth",
+        "HEL": "Health",
+        "FNR": "Fun & Recreation",
+        "POS": "Possesion",
+        "CAR": "Career"
+    },
     "data": {
         "Friends & Family": 1,
-        "Relationships": 2,
-        "Wealth": 3,
-        "Personal Growth": 4,
-        "Health": 5,
-        "Fun & Recreation": 6,
-        "Possesion": 7,
-        "Career": 8
+        "Relationships": 1,
+        "Wealth": 1,
+        "Personal Growth": 1,
+        "Health": 1,
+        "Fun & Recreation": 1,
+        "Possesion": 1,
+        "Career": 1
     },
     "labels": ["Friends & Family", "Relationships", "Wealth", "Personal Growth", "Health", "Fun & Recreation", "Possesion", "Career"]
 }
@@ -19,9 +29,9 @@ var action = {
     showIncrement(i) {
         var ids1 = ["#span1", "#span2", "#span3", "#span4", "#span5", "#span6", "#span7", "#span8"];
         var ids2 = ["#input1", "#input2", "#input3", "#input4", "#input5", "#input6", "#input7", "#input8"];
-        $(ids2[i]).on('input', function () {
+        $(ids2[i]).on('change', function () {
             var val = $(this).val();
-            Application.data[i] = val;
+            Application.data[i-1] = val;
             var min = $(this).attr('min');
             var max = $(this).attr('max');
             var portion = (val - min) / (max - min);
@@ -37,22 +47,20 @@ var action = {
         }
         renderChart(data, Application.labels);
     },
-    sendEmail(){
+    sendEmail() {
         var storage =
-         {
-            "Friends & Family": Application.data[0],
-            "Relationships": Application.data[1],
-            "Wealth": Application.data[2],
-            "Personal Growth": Application.data[3],
-            "Health": Application.data[4],
-            "Fun & Recreation": Application.data[5],
-            "Possesion": Application.data[6],
-            "Career": Application.data[7]
+        {
+            "Friends & Family": Application.data["Friends & Family"],
+            "Relationships": Application.data["Relationships"],
+            "Wealth": Application.data["Wealth"],
+            "Personal Growth": Application.data["Personal Growth"],
+            "Health": Application.data["Health"],
+            "Fun & Recreation": Application.data["Fun & Recreation"],
+            "Possesion": Application.data["Possesion"],
+            "Career": Application.data["Career"]
         };
         var email = ReportPane.getEmail();
-        var result = storage;
-        alert(result);
-        alert(result);
+        var result = Mustache.render(template, storage);
         if (email != false) {
             emailjs.init(siteConfiguration.email.userId);
             var templateParams = {
@@ -155,7 +163,7 @@ function showDataEntry() {
     $('#ReportPane').css({ display: 'block' });
     $('#sendReport').show();
     $("#do_again").show();
-    $("#submit_btn").hide();
+    $("#footer_area").hide();
 
     var labelToIdMap = {
         "Friends & Family": "input1",
@@ -183,7 +191,7 @@ var ReportPane = {
         $('#sendReport').hide();
         location.reload();
     },
-    showThankYouPage() {  
+    showThankYouPage() {
         $("#thankYou").show();
         $("#ReportPane").hide();
         $('#sendReport').hide();
