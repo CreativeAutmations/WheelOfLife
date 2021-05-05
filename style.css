@@ -1,7 +1,7 @@
 body {
     height: 100vh;
     margin: 0px;
-    /* background-image: linear-gradient(180deg, #c2cacb,#ee8d3e); */
+    background-image: linear-gradient(180deg, #c2cacb,#ee8d3e);
 }
 
 #headerarea {
@@ -28,7 +28,7 @@ body {
 }
 
 #dataentrypane {
-    background-image: linear-gradient(180deg, #c2cacb,#ee8d3e);
+    /* background-image: linear-gradient(180deg, #c2cacb,#ee8d3e); */
     /* background-image: url("Images/bg1.png"); */
     padding: 1% 10% 0% 10%;
     height: 84%;
