@@ -184,7 +184,14 @@ function showDataEntry() {
 
 }
 var ReportPane = {
-    DoAgain() {
+    // DoAgain() {
+    //     $("#dataentrypane").show();
+    //     $("#submit_btn").show();
+    //     $("#ReportPane").hide();
+    //     $('#sendReport').hide();
+    //     location.reload();
+    // },
+    resume(){
         $("#dataentrypane").show();
         $("#submit_btn").show();
         $("#ReportPane").hide();
