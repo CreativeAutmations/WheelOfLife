@@ -163,9 +163,16 @@ body {
     #sendText {
         display: inline;
     }
-
+    #resume{
+        font-size: xxx-large;
+        margin: 2% 0% 0% 48%;
+        color: brown;
+    }
 /* ------------------------------------------------------------------------------------ */
 @media only screen and (max-width: 600px) {
+    #resume{
+        margin-top: 20%;
+    }
     #logo{
         padding: 2%;
         margin-left: 0%;
