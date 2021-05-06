@@ -185,13 +185,20 @@ body {
 /* ------------------------------------------------------------------------------------ */
 @media only screen and (max-width: 600px) {
     #resume{
-        margin-top: 20%;
+        margin-left: 35%;
+        font-size: 290%;
+    }
+    #sendText {
+        display: inline;
+        font-size: 80%;
     }
     #logo{
         padding: 2%;
         margin-left: 0%;
     }
-
+    .h-rs-indicator::after{
+        margin-left: -30%
+    }
     #head {
         font-size: xx-large;
         font-weight: 650;
@@ -216,7 +223,6 @@ body {
        width: 7%;
        font-size: unset;
        height: 60%;
-       margin-top: 4%;
-       line-height: inherit;
+       line-height: 70%;
    }
 }
