@@ -219,12 +219,13 @@ body {
    }
    .h-rs-container{
        width: 100%;
-       top: -70%;
+       margin-top: 4%;
    }
    .h-rs-indicator {
        width: 7%;
        font-size: unset;
-       height: 60%;
-       line-height: 70%;
+       height: 85%;
+       line-height: 100%;
+       top: -100%;
    }
 }
