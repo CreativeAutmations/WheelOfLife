@@ -1,6 +1,6 @@
 body {
     height: 100vh;
-    margin: 0px;
+    margin: 0%;
     background-image: linear-gradient(180deg, #c2cacb,#ee8d3e);
 }
 
@@ -18,13 +18,14 @@ body {
     font-size: xxx-large;
     font-weight: 600;
     padding-top: 0.5%;
+    padding-left: 8%;
 }
 
 #logo {
-    height: 80px;
+    height: 90%;
     float: left;
-    margin-left: 20px;
-    padding-top: 10px;
+    margin-left: 1%;
+    padding-top: 0.5%;
 }
 
 #dataentrypane {
@@ -41,17 +42,17 @@ body {
 
 
 #success { 
-    font-size: 150px;
+    font-size: 1000%;
     color: green;
-    padding: 30px;
-    padding-top: 70px;
+    padding: 5%;
+    padding-top: 10%;
 }
 
 .labels{
     width: 25%; 
     padding: 1% 1% 1% 1%; 
     text-align: right; 
-    font-size: x-large;
+    font-size: larger;
     font-weight: 600;
 }
 
@@ -107,10 +108,10 @@ body {
       border-radius: 30%;
       text-align: center;
       font-size: x-large;
-      line-height: 35px;
+      line-height: 140%;
       background:#8a2be23d;
       position: absolute;
-      top: -65%;
+      top: -70%;
       /* left: 0; */
       margin-left: -1%;
     }
@@ -125,14 +126,14 @@ body {
       position: absolute;
       top: 98%;
       left: 50%;
-      margin-left: -8px;
+      margin-left: -23%;
     }
     
     .h-rs-line {
       width: 80%;
-      margin-top: 24px;
+      margin-top: 2%;
       -webkit-appearance: none;
-      border-radius: 24px;
+      border-radius: 50%;
       background-color: blueviolet;
     }
     
@@ -163,14 +164,42 @@ body {
     #sendText {
         display: inline;
     }
-
+    #resume{
+        font-size: 400%;
+        margin-left: 70%;
+        /* margin: 2% 0% 0% 48%; */
+        color: brown;
+    }
+    #sendReportBtn{
+        height: -webkit-fill-available;
+        margin: 2% 0% 1% 1%;
+        font-size: 130%;
+    }
+    #send_icon{
+        font-size: 220%;
+        color: #1819f8;
+        margin: 1%;
+    }
+    #sendReportInt{
+        margin: 1%;
+    }
 /* ------------------------------------------------------------------------------------ */
 @media only screen and (max-width: 600px) {
+    #resume{
+        margin-left: 35%;
+        font-size: 290%;
+    }
+    #sendText {
+        display: inline;
+        font-size: 80%;
+    }
     #logo{
         padding: 2%;
         margin-left: 0%;
     }
-
+    .h-rs-indicator::after{
+        margin-left: -30%
+    }
     #head {
         font-size: xx-large;
         font-weight: 650;
@@ -190,12 +219,13 @@ body {
    }
    .h-rs-container{
        width: 100%;
+       margin-top: 4%;
    }
    .h-rs-indicator {
        width: 7%;
        font-size: unset;
-       height: 60%;
-       margin-top: 4%;
-       line-height: inherit;
+       height: 85%;
+       line-height: 100%;
+       top: -100%;
    }
 }

@@ -26,6 +26,12 @@ var Application = {
 }
 
 var action = {
+    getEmail(){
+        $('#sendReportBtn').hide();
+        $('#resume').hide();
+        $('#sendReportInt').show();
+        $('#send_icon').show();
+    },
     showIncrement(i) {
         var ids1 = ["#span1", "#span2", "#span3", "#span4", "#span5", "#span6", "#span7", "#span8"];
         var ids2 = ["#input1", "#input2", "#input3", "#input4", "#input5", "#input6", "#input7", "#input8"];
@@ -184,7 +190,14 @@ function showDataEntry() {
 
 }
 var ReportPane = {
-    DoAgain() {
+    // DoAgain() {
+    //     $("#dataentrypane").show();
+    //     $("#submit_btn").show();
+    //     $("#ReportPane").hide();
+    //     $('#sendReport').hide();
+    //     location.reload();
+    // },
+    resume(){
         $("#dataentrypane").show();
         $("#submit_btn").show();
         $("#ReportPane").hide();

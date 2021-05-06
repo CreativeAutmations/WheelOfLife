@@ -105,13 +105,13 @@
     <div id="ReportPane" class="container" style="display: none;">
         <canvas id="myChart"></canvas>
         <div class="input-group" id="sendReport" style="display: none;">
-            <button type="button" class="btn btn-primary btn-lg btn-block" id="do_again"
-                style="display: none; margin: 0% 20% 10% 20%;" onclick="ReportPane.DoAgain()">Do Again</button>
-            <input type="email" id="sendReportInt" class="form-control" placeholder="name@example.com"
-                aria-label="Recipient's username" aria-describedby="button-addon2">
-            <button type="button" id="sendReportBtn" class="btn btn-primary " onclick="action.sendEmail()">
-                <div id="sendText"> Send Report Via Email </div><i class="fas fa-paper-plane"></i>
+            <button type="button" id="sendReportBtn" class="btn btn-primary " onclick="action.getEmail()">
+                <div id="sendText"> Send Report Via Email </div>
             </button>
+            <input type="email" id="sendReportInt" class="form-control" placeholder="name@example.com"
+                aria-label="Recipient's username" aria-describedby="button-addon2" style="display: none;">
+            <i class="fas fa-paper-plane" id="send_icon" style="display: none;" onclick="action.sendEmail()"></i>
+            <i class="fa fa-repeat" id="resume" aria-hidden="true" onclick="ReportPane.resume()"></i>
         </div>
     </div>
     <div id="thankYou">
