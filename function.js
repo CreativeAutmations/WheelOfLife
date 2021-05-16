@@ -27,9 +27,9 @@ var Application = {
 
 var action = {
     getEmail(){
-        $('#sendReportBtn').hide();
+        $('#send_report_btn').hide();
         $('#resume').hide();
-        $('#sendReportInt').show();
+        $('#send_report_int').show();
         $('#send_icon').show();
     },
     showIncrement(i) {
@@ -86,7 +86,7 @@ var action = {
 }
 
 function renderChart(data, labels) {
-    var ctx = document.getElementById("myChart").getContext('2d');
+    var ctx = document.getElementById("my_chart").getContext('2d');
     var myChart = new Chart(ctx, {
         type: 'polarArea',
         data: {
@@ -166,7 +166,7 @@ function renderChart(data, labels) {
 
 function showDataEntry() {
     $('#dataentrypane').hide();
-    $('#ReportPane').css({ display: 'block' });
+    $('#report_pane').css({ display: 'block' });
     $('#sendReport').show();
     $("#do_again").show();
     $("#footer_area").hide();
@@ -193,25 +193,25 @@ var ReportPane = {
     // DoAgain() {
     //     $("#dataentrypane").show();
     //     $("#submit_btn").show();
-    //     $("#ReportPane").hide();
+    //     $("#report_pane").hide();
     //     $('#sendReport').hide();
     //     location.reload();
     // },
     resume(){
         $("#dataentrypane").show();
         $("#submit_btn").show();
-        $("#ReportPane").hide();
+        $("#report_pane").hide();
         $('#sendReport').hide();
         location.reload();
     },
     showThankYouPage() {
-        $("#thankYou").css({ display: 'block' });
-        $("#ReportPane").hide();
+        $("#thank_you").css({ display: 'block' });
+        $("#report_pane").hide();
         $('#sendReport').hide();
         // $("#do_again").hide();
     },
     getEmail() {
-        var emailGt = $.trim($("#sendReportInt").val());
+        var emailGt = $.trim($("#send_report_int").val());
         if (emailGt == "") {
             alert("Please enter the Email");
             return false;

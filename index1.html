@@ -14,7 +14,7 @@
     <body>
         <div id="header_area">
             <img id="logo" src="Images/wings2life.png">
-            <div id="head">Wheel of Life
+            <div id="head">Wheel of Life</div>
         </div>
         <div id="data_entry_pane">
             <div class="parent">
@@ -27,8 +27,98 @@
                     </div>
                 </div>
             </div>
+            <div class="parent">
+                <label for="Friends-n-Family" class="labels">Relationships :</label>
+                <div class="h-rs-container">
+                    <div class="h-rs">
+                        <span class="h-rs-indicator" id="span2">1</span>
+                        <input class="h-rs-line" id="input2" type="range" value="1" min="1" max="10"
+                            oninput="action.showIncrement(1)" />
+                    </div>
+                </div>
+            </div>
+            <div class="parent">
+                <label for="Friends-n-Family" class="labels">Wealth :</label>
+                <div class="h-rs-container">
+                    <div class="h-rs">
+                        <span class="h-rs-indicator" id="span3">1</span>
+                        <input class="h-rs-line" id="input3" type="range" value="1" min="1" max="10"
+                            oninput="action.showIncrement(2)" />
+                    </div>
+                </div>
+            </div>
+            <div class="parent">
+                <label for="Friends-n-Family" class="labels">Personal
+                    Growth :</label>
+                <div class="h-rs-container">
+                    <div class="h-rs">
+                        <span class="h-rs-indicator" id="span4">1</span>
+                        <input class="h-rs-line" id="input4" type="range" value="1" min="1" max="10"
+                            oninput="action.showIncrement(3)" />
+                    </div>
+                </div>
+            </div>
+            <div class="parent">
+                <label for="Friends-n-Family" class="labels">Health :</label>
+                <div class="h-rs-container">
+                    <div class="h-rs">
+                        <span class="h-rs-indicator" id="span5">1</span>
+                        <input class="h-rs-line" id="input5" type="range" value="1" min="1" max="10"
+                            oninput="action.showIncrement(4)" />
+                    </div>
+                </div>
+            </div>
+            <div class="parent">
+                <label for="Friends-n-Family" class="labels">Fun &
+                    Recreation :</label>
+                <div class="h-rs-container">
+                    <div class="h-rs">
+                        <span class="h-rs-indicator" id="span6">1</span>
+                        <input class="h-rs-line" id="input6" type="range" value="1" min="1" max="10"
+                            oninput="action.showIncrement(5)" />
+                    </div>
+                </div>
+            </div>
+            <div class="parent">
+                <label for="Friends-n-Family" class="labels">Possesion :</label>
+                <div class="h-rs-container">
+                    <div class="h-rs">
+                        <span class="h-rs-indicator" id="span7">1</span>
+                        <input class="h-rs-line" id="input7" type="range" value="1" min="1" max="10"
+                            oninput="action.showIncrement(6)" />
+                    </div>
+                </div>
+            </div>
+            <div class="parent">
+                <label for="Friends-n-Family" class="labels">Career :</label>
+                <div class="h-rs-container">
+                    <div class="h-rs">
+                        <span class="h-rs-indicator" id="span8">1</span>
+                        <input class="h-rs-line" id="input8" type="range" value="1" min="1" max="10"
+                            oninput="action.showIncrement(7)" />
+                    </div>
+                </div>
+            </div>
+            <div id="thank_you">
+                <i class="fas fa-check-circle" id="success"></i>
+                <h1>Thank You</h1>
+                <h2>Your Wheel Of Life Report has been sent to your email</h2>
+            </div>
         </div>
-        <div id="footer_area"></div>
+        <div id="footer_area">
+            <button type="button" id="submit_btn" class="btn btn-primary btn-lg btn-block footer_buttons"
+            onclick="action.showPieChart()">Submit</button>
+            <div id="report_pane">
+                <canvas id="my_chart"></canvas>
+                <input type="email" id="send_report_int" class="form-control" placeholder="name@example.com"
+                aria-label="Recipient's username" aria-describedby="button-addon2" style="display: none;">
+                <i class="fas fa-paper-plane" id="send_icon" style="display: none;" onclick="action.sendEmail()"></i>
+                <i class="fa fa-repeat" id="resume" aria-hidden="true" onclick="ReportPane.resume()" style="display: none;"></i>
+                <button type="button" id="send_report_btn" class="btn btn-primary " onclick="action.getEmail()" style="display: none;">
+                    <div id="send_text"> Send Report Via Email </div>
+                </button>
+            </div>
+        </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
