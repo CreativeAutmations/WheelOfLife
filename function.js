@@ -27,9 +27,7 @@ var Application = {
 
 var action = {
     getEmail(){
-        $('#send_report_btn').hide();
-        $('#resume').hide();
-        $('#send_report_int').show();
+        $('#sendReportInt').show();
         $('#send_icon').show();
     },
     showIncrement(i) {
@@ -86,7 +84,7 @@ var action = {
 }
 
 function renderChart(data, labels) {
-    var ctx = document.getElementById("my_chart").getContext('2d');
+    var ctx = document.getElementById("myChart").getContext('2d');
     var myChart = new Chart(ctx, {
         type: 'polarArea',
         data: {
@@ -166,10 +164,13 @@ function renderChart(data, labels) {
 
 function showDataEntry() {
     $('#dataentrypane').hide();
-    $('#report_pane').css({ display: 'block' });
+    $('#ReportPane').css({ display: 'block' });
     $('#sendReport').show();
-    $("#do_again").show();
+    $('#sendReportBtn').hide();
+    $("#resume").show();
     $("#footer_area").hide();
+    $('#sendReportInt').show();
+    $('#send_icon').show();
 
     var labelToIdMap = {
         "Friends & Family": "input1",
@@ -193,25 +194,25 @@ var ReportPane = {
     // DoAgain() {
     //     $("#dataentrypane").show();
     //     $("#submit_btn").show();
-    //     $("#report_pane").hide();
+    //     $("#ReportPane").hide();
     //     $('#sendReport').hide();
     //     location.reload();
     // },
     resume(){
         $("#dataentrypane").show();
         $("#submit_btn").show();
-        $("#report_pane").hide();
+        $("#ReportPane").hide();
         $('#sendReport').hide();
         location.reload();
     },
     showThankYouPage() {
-        $("#thank_you").css({ display: 'block' });
-        $("#report_pane").hide();
+        $("#thankYou").css({ display: 'block' });
+        $("#ReportPane").hide();
         $('#sendReport').hide();
         // $("#do_again").hide();
     },
     getEmail() {
-        var emailGt = $.trim($("#send_report_int").val());
+        var emailGt = $.trim($("#sendReportInt").val());
         if (emailGt == "") {
             alert("Please enter the Email");
             return false;

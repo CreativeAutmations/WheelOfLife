@@ -4,7 +4,7 @@ body {
     background-image: linear-gradient(180deg, #c2cacb,#ee8d3e);
 }
 
-#header_area {
+#headerarea {
     display: flex;
     background-image: linear-gradient(45deg, transparent, blue, transparent);
     color: aliceblue;
@@ -28,14 +28,14 @@ body {
     padding-top: 0.5%;
 }
 
-#data_entry_pane {
+#dataentrypane {
     /* background-image: linear-gradient(180deg, #c2cacb,#ee8d3e); */
     /* background-image: url("Images/bg1.png"); */
     padding: 1% 10% 0% 10%;
     height: 84%;
 }
 
-#thank_you {
+#thankYou {
     display: none;
     text-align: center;
 }
@@ -76,6 +76,9 @@ body {
     font-weight: 500;
     margin: 0%;
 }
+#footer_area{
+    height: 6%;
+}
 
 .footer_buttons{
     height: 100%;
@@ -108,13 +111,20 @@ body {
       line-height: 140%;
       background:#8a2be23d;
       position: absolute;
-      top: -50%;
-      /* left: 0; */
-      margin-left: -1%;
+      top: -6%;
+      margin: -2% 0% 0% -1%;
     }
     
     .h-rs-indicator::after {
+      content: '';
+      /* width: 0;
+      height: 0; */
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
       position: absolute;
+      top: 98%;
+      left: 50%;
+      margin-left: -23%;
     }
     
     .h-rs-line {
@@ -149,16 +159,16 @@ body {
         margin: 0px;
     }
        
-    #send_text {
+    #sendText {
         display: inline;
     }
     #resume{
         font-size: 400%;
-        margin-left: 70%;
-        /* margin: 2% 0% 0% 48%; */
+        /* margin-left: 70%; */
+        margin: 2% 0% 0% 48%;
         color: brown;
     }
-    #send_report_btn{
+    #sendReportBtn{
         height: -webkit-fill-available;
         margin: 2% 0% 1% 1%;
         font-size: 130%;
@@ -168,16 +178,20 @@ body {
         color: #1819f8;
         margin: 1%;
     }
-    #send_report_int{
+    #sendReportInt{
         margin: 1%;
     }
 /* ------------------------------------------------------------------------------------ */
 @media only screen and (max-width: 600px) {
+    body{
+        height: 100%;
+
+    }
     #resume{
         margin-left: 35%;
         font-size: 290%;
     }
-    #send_text {
+    #sendText {
         display: inline;
         font-size: 80%;
     }
@@ -213,6 +227,9 @@ body {
        width: 7%;
        font-size: unset;
        height: 85%;
-       top: -60%;
+       line-height: 100%;
+       top: -41%;
    }
+
+   
 }
