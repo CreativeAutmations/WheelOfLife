@@ -17,6 +17,8 @@
     <div id="headerarea">
         <img id="logo" src="Images/wings2life.png">
         <div id="head">Wheel of Life</div>
+        <i  class="fad fa-inbox-out" id="message" aria-hidden="true" style="display: none;" onclick="ReportPane.message()"></i>
+        <i class="fa fa-repeat" id="resume" style="display: none;"aria-hidden="true" onclick="ReportPane.resume()"></i>
     </div>
     <div id="dataentrypane">
         <div class="parent">
@@ -104,7 +106,6 @@
     </div>
     <div id="ReportPane" class="container" style="display: none;">
         <canvas id="myChart"></canvas>
-        <i class="fa fa-repeat" id="resume" aria-hidden="true" onclick="ReportPane.resume()"></i>
         <div class="input-group" id="sendReport" style="display: none;">
             <button type="button" id="sendReportBtn" class="btn btn-primary " onclick="action.getEmail()">
                 <div id="sendText"> Send Report Via Email </div>

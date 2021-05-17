@@ -164,13 +164,15 @@ function renderChart(data, labels) {
 
 function showDataEntry() {
     $('#dataentrypane').hide();
+    $(document.body).css( "background", "aliceblue" );
     $('#ReportPane').css({ display: 'block' });
-    $('#sendReport').show();
+    $('#sendReport').hide();
     $('#sendReportBtn').hide();
     $("#resume").show();
+    $("#message").show();
     $("#footer_area").hide();
-    $('#sendReportInt').show();
-    $('#send_icon').show();
+    $('#sendReportInt').hide();
+    $('#send_icon').hide();
 
     var labelToIdMap = {
         "Friends & Family": "input1",
@@ -191,13 +193,15 @@ function showDataEntry() {
 
 }
 var ReportPane = {
-    // DoAgain() {
-    //     $("#dataentrypane").show();
-    //     $("#submit_btn").show();
-    //     $("#ReportPane").hide();
-    //     $('#sendReport').hide();
-    //     location.reload();
-    // },
+    message(){
+        $('#sendReport').show();
+        $('#sendReportBtn').hide();
+        $("#resume").hide();
+        $("#message").hide();
+        $("#footer_area").hide();
+        $('#sendReportInt').show();
+        $('#send_icon').show();
+    },
     resume(){
         $("#dataentrypane").show();
         $("#submit_btn").show();

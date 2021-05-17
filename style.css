@@ -18,7 +18,7 @@ body {
     font-size: xxx-large;
     font-weight: 600;
     padding-top: 0.5%;
-    padding-left: 8%;
+    margin-left: 4%;
 }
 
 #logo {
@@ -163,10 +163,17 @@ body {
         display: inline;
     }
     #resume{
-        font-size: 400%;
-        /* margin-left: 70%; */
-        margin: 2% 0% 0% 48%;
-        color: brown;
+        font-size: xx-large;
+        margin-left: 2%;
+        color: darkblue;
+        float: right;
+        padding-top: 1%;
+    }
+    #message{
+        float: right;
+        padding-top: 1%;
+        margin-left: 2%;
+        color: darkblue;
     }
     #sendReportBtn{
         height: -webkit-fill-available;
@@ -187,10 +194,6 @@ body {
         height: 100%;
 
     }
-    #resume{
-        margin-left: 35%;
-        font-size: 290%;
-    }
     #sendText {
         display: inline;
         font-size: 80%;
@@ -203,13 +206,27 @@ body {
         margin-left: -30%
     }
     #head {
-        font-size: xx-large;
+        font-size: x-large;
         font-weight: 650;
-        padding: 3%;
+        padding: 6% 0% 3% 0%;
         text-align: left;
-        margin-top: 2%;
+        margin-left: 0%;
     }
-    
+    #message {
+        font-size: x-large;
+        padding-top: 7%;
+    }
+    #resume {
+        font-size: x-large;
+        padding-top: 7%;
+        margin-right: 2%;
+    }
+    #submit_btn {
+        margin-top: 10%;
+    }
+    #send_icon{
+        font-size: 170%;
+    }
    .parent{
        display: block;
    }
