@@ -247,6 +247,38 @@ body {
        line-height: 100%;
        top: -41%;
    }
-
-   
 }
+/* ----------------------------------------------------------------------------------------------------------------------------------------- */
+
+@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+   /* Your CSS Here*/
+   body{
+       height: 10%;
+   }
+
+   #head{
+    font-size: unset;
+    padding-top: 1%;
+    margin-left: -2%;
+    }
+
+    #success {
+        font-size: 712%;
+        padding-top: 9%;
+    }
+
+    .labels{
+        font-size: smaller;
+    }
+    .h-rs-indicator{
+        font-size: small;
+    }
+    .h1, h1 {
+        font-size: x-large;
+    }
+    .h2, h2 {
+        font-size: larger;
+    }
+}
+
+
