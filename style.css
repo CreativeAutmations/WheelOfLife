@@ -18,7 +18,7 @@ body {
     font-size: xxx-large;
     font-weight: 600;
     padding-top: 0.5%;
-    padding-left: 8%;
+    margin-left: 4%;
 }
 
 #logo {
@@ -105,15 +105,14 @@ body {
     
     .h-rs-indicator {
       width: 3%;
-      border-radius: 30%;
+      border-radius: 50%;
       text-align: center;
       font-size: x-large;
       line-height: 140%;
       background:#8a2be23d;
       position: absolute;
-      top: -70%;
-      /* left: 0; */
-      margin-left: -1%;
+      top: -6%;
+      margin: -2% 0% 0% -1%;
     }
     
     .h-rs-indicator::after {
@@ -122,7 +121,6 @@ body {
       height: 0; */
       border-left: 8px solid transparent;
       border-right: 8px solid transparent;
-      border-top: 9px solid black;
       position: absolute;
       top: 98%;
       left: 50%;
@@ -165,10 +163,17 @@ body {
         display: inline;
     }
     #resume{
-        font-size: 400%;
-        margin-left: 70%;
-        /* margin: 2% 0% 0% 48%; */
-        color: brown;
+        font-size: xx-large;
+        margin-left: 2%;
+        color: darkblue;
+        float: right;
+        padding-top: 1%;
+    }
+    #message{
+        float: right;
+        padding-top: 1%;
+        margin-left: 2%;
+        color: darkblue;
     }
     #sendReportBtn{
         height: -webkit-fill-available;
@@ -185,9 +190,9 @@ body {
     }
 /* ------------------------------------------------------------------------------------ */
 @media only screen and (max-width: 600px) {
-    #resume{
-        margin-left: 35%;
-        font-size: 290%;
+    body{
+        height: 100%;
+
     }
     #sendText {
         display: inline;
@@ -201,13 +206,27 @@ body {
         margin-left: -30%
     }
     #head {
-        font-size: xx-large;
+        font-size: x-large;
         font-weight: 650;
-        padding: 3%;
+        padding: 6% 0% 3% 12%;
         text-align: left;
-        margin-top: 2%;
+        margin-left: 0%;
     }
-    
+    #message {
+        font-size: x-large;
+        padding-top: 7%;
+    }
+    #resume {
+        font-size: x-large;
+        padding-top: 7%;
+        margin-right: 2%;
+    }
+    #submit_btn {
+        margin-top: 10%;
+    }
+    #send_icon{
+        font-size: 170%;
+    }
    .parent{
        display: block;
    }
@@ -226,6 +245,40 @@ body {
        font-size: unset;
        height: 85%;
        line-height: 100%;
-       top: -100%;
+       top: -41%;
    }
 }
+/* ----------------------------------------------------------------------------------------------------------------------------------------- */
+
+@media screen and (orientation: landscape) {
+   /* Your CSS Here*/
+   body{
+       height: 100%;
+   }
+
+   #head{
+    font-size: unset;
+    padding-top: 1%;
+    margin-left: -2%;
+    }
+
+    #success {
+        font-size: 712%;
+        padding-top: 9%;
+    }
+
+    .labels{
+        font-size: smaller;
+    }
+    .h-rs-indicator{
+        font-size: small;
+    }
+    .h1, h1 {
+        font-size: x-large;
+    }
+    .h2, h2 {
+        font-size: larger;
+    }
+}
+
+
